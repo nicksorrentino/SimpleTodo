@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Simple Todo</string>
+    <string name="add_item_label">Add Item</string>
+    <string name="enter_a_new_item_label">Enter a new item</string>
+    <string name="save_label">Save</string>
+    <string name="todo_label">Todo</string>
+    <string name="due_date_label">Due Date</string>
+    <string name="priority_label">Priority</string>
+    <string name="cancel_label">Cancel</string>
+
+    <string-array name="priority_array">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+</resources>
