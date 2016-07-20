@@ -74,12 +74,10 @@ public class MainActivity extends AppCompatActivity implements EditItemDialogFra
                 result = 1;
             } else {
                 result = d1.compareTo(d2);
-                Log.d(TAG, t1.getTitle()+ "," + t2.getTitle() + "===" + result);
             }
 
+            // if the results are equal compare the priorities
             if ( result == 0 ){
-                Log.d("ToDo", p1 +"============"+ p2);
-
                 result = p1 - p2;
             }
 
@@ -87,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements EditItemDialogFra
         }
     }
 
+    /* convert string priority to int */
     private int getPriorityValue(String priority) {
         if ( priority.equals("Low") ) {
             return 3;
@@ -133,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements EditItemDialogFra
 
         }
     }
-
+    /* callback when the edit dialog resolves */
     public void onFinishEditItemDialog(TodoItem todoItem) {
         if ( todoItem != null ) {
             // find the index in the items array
@@ -213,7 +212,6 @@ public class MainActivity extends AppCompatActivity implements EditItemDialogFra
             Date dueDate = null;
 
             String dueDateString = cursor.getString(dueDateIdx);
-            Log.d(TAG, "Date==" + dueDateString);
             if ( dueDateString != null ) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 try {

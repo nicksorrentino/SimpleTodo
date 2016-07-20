@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +83,7 @@ public class EditItemDialogFragment extends DialogFragment implements View.OnCli
         btnSave = (Button)view.findViewById(R.id.btnSave);
         btnCancel = (Button)view.findViewById(R.id.btnCancel);
 
+        // set up proper click handlers for dialogs
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
     }
@@ -141,9 +141,10 @@ public class EditItemDialogFragment extends DialogFragment implements View.OnCli
         return calendar.getTime();
     }
 
+    /* handle button clicks*/
     @Override
     public void onClick(View v){
-        Log.d("ToDo", "CLICK " + v.getId() + "==" + R.id.btnSave);
+        // determine which button was clicked
         switch (v.getId()) {
             case R.id.btnSave:
                 onSave(v);
